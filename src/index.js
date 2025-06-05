@@ -10,12 +10,7 @@ dbconnect();
 
 const server = express();
 server.use(express.json());
-
-server.use(
-  cors({
-    origin: "https://todofront-delta.vercel.app/",
-  })
-);
+server.use(cors());
 server.use(express.urlencoded({ extended: true }));
 
 server.use("/todo", TodoRoutes);
